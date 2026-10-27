@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GovConnect – Government services and exam updates in one place</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="logo" href="#home">Gov<span>Connect</span></a>
+<nav id="nav" aria-label="Main"><ul>
+<li><a href="#home" class="on">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#gallery">Product Gallery</a></li><li><a href="#contact">Contact</a></li><li><a href="#reviews">Reviews</a></li>
+</ul></nav>
+<button class="icon" id="theme" aria-label="Change theme" title="Change theme">Theme: Light</button>
+<button class="icon" id="menu" aria-label="Open menu" aria-expanded="false">Menu</button>
+</div></header>
+
+<main>
+<section id="home" class="hero"><div class="wrap">
+<h1>Every government service and exam update, in one place.</h1>
+<p>Step-by-step guides for Aadhaar, PAN, Passport and more, with links straight to the official websites. No hunting across portals.</p>
+<form class="search" id="heroSearch" role="search"><label for="q" style="position:absolute;left:-9999px">Search services</label><input id="q" type="search" placeholder="Search a service, e.g. passport"><button class="btn" type="submit">Find guide</button></form>
+<div class="stats">
+<div class="card"><span class="big">18 services</span><p>Guides covering apply, update and download.</p></div>
+<div class="card"><span class="big">6 exam families</span><p>UPSC, SSC, TNPSC and banking exams.</p></div>
+<div class="card"><span class="big">Official links only</span><p>Every guide ends at a government site.</p></div>
+</div>
+</div></section>
+
+<section id="exams"><div class="wrap">
+<h2>Exam notifications</h2>
+<p>Pick an exam to see eligibility, syllabus outline and where to register. Dates change every cycle, so always confirm on the official notice.</p>
+<div class="chips" role="tablist" id="examTabs"></div>
+<div class="exam" id="examPanel" role="tabpanel"></div>
+</div></section>
+
+<section id="gallery" style="background:var(--surface)"><div class="wrap">
+<h2>Product Gallery</h2>
+<p>Choose a service to open its guide.</p>
+<div class="chips" id="filters"></div>
+<div class="grid" id="services"></div>
+<p id="empty" hidden>No guide matches that search. Try “PAN”, “passport” or clear the search.</p>
+</div></section>
+
+<section id="about"><div class="wrap two">
+<div><h2>About Us</h2>
+<p>GovConnect started from a simple frustration: finishing one government task often means opening five different websites and guessing which one is real.</p>
+<p>We gather the steps, the documents you need and the official link in a single page, written for students, job seekers and anyone doing this for the first time.</p></div>
+<div><div class="card" style="margin-bottom:1rem"><h3>Privacy and safety</h3><p>GovConnect has no accounts, no tracking and no database. The contact form sends nothing, and reviews stay in your own browser.</p><p>Never share an OTP, Aadhaar or PAN number with this site or anyone who calls you. Only enter them on the official portal each guide links to.</p></div><div class="card"><h3>Coming next</h3>
+<p>Secure sign-in with a personal dashboard.</p><p>Saved guides and exam deadline alerts by email or push notification.</p><p>A document locker like DigiLocker, covering more document types.</p></div></div>
+</div></section>
+
+<section id="contact" style="background:var(--surface)"><div class="wrap two">
+<div><h2>Contact</h2><p>Spotted an outdated step or need a guide we don’t have yet? Tell us.</p></div>
+<form id="contactForm" novalidate>
+<div class="field"><label for="cn">Name</label><input id="cn" required></div>
+<div class="field"><label for="ce">Email</label><input id="ce" type="email" required></div>
+<div class="field"><label for="cm">Message</label><textarea id="cm" rows="4" required></textarea></div>
+<button class="btn" type="submit">Send message</button>
+<p class="note" id="cnote" role="status"></p>
+</form>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+<h2>Reviews</h2>
+<div class="grid" id="reviewList"></div>
+<h3 style="margin-top:2.5rem">Share your experience</h3>
+<form id="reviewForm" style="max-width:520px" novalidate>
+<div class="field"><label for="rn">Name</label><input id="rn" required></div>
+<div class="field"><label for="rr">Rating</label><select id="rr"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></div>
+<div class="field"><label for="rt">Review</label><textarea id="rt" rows="3" required></textarea></div>
+<button class="btn" type="submit">Post review</button>
+<p class="note" id="rnote" role="status"></p>
+</form>
+</div></section>
+</main>
+
+<footer><div class="wrap">GovConnect is an information guide and is not a government website. Always complete applications on the official portals linked in each guide.</div></footer>
+
+<dialog id="dlg" aria-labelledby="dt"><h3 id="dt"></h3><ol id="ds"></ol><p class="tag" id="dv"></p><p><strong>Keep ready:</strong> <span id="dk"></span></p>
+<div style="display:flex;gap:.5rem;flex-wrap:wrap"><a class="btn" id="dl" target="_blank" rel="noopener">Open official site</a><button class="btn ghost" id="dc">Close</button></div></dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
